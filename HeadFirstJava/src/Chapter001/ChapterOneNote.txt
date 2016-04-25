@@ -1,0 +1,15 @@
+This note contain my reading and learning log.
+
+Introduction to Java
+
+James Gosling, Mike Sheridan, and Patrick Naughton initiated the Java language project in June 1991. The language was
+initially called Oak and after that renamed as Java. Gosling aimed to implement a virtual machine and a language that
+had a familiar C/C++ style of notation. Java is under the OOPS concept.
+
+Features
+
+Platform Independence, Object Oriented, Robust, Security, Simple, Portable, Distributed, Interpreted, Multithreaded,
+High performance, Built-in Networking, Architecture Neutral, Automatic Memory Management & Several dangerous
+features of C and C++ eliminated.
+
+
