@@ -1,0 +1,43 @@
+The sensitivity of the ResultSet object is determined by one of three different ResultSet types:
+
+·  TYPE_FORWARD_ONLY — the result set is not scrollable i.e. the cursor moves only forward, from before the first row
+    to after the last row.
+
+·  TYPE_SCROLL_INSENSITIVE — the result set is scrollable; its cursor can move both forward and backward relative to
+    the current position,
+and it can move to an absolute position.
+
+·  TYPE_SCROLL_SENSITIVE — the result set is scrollable; its cursor can move both forward and backward relative to the
+    current position, and it can move to an absolute position.
+==================
+
+    Result Set Methods
+
+    When a ResultSet object is first created, the cursor is positioned before the first row. To move the cursor, you can
+    use the following methods:
+
+    ·  next() – moves the cursor forward one row. Returns true if the cursor is now positioned on a row and false if the
+    cursor is positioned after the last row.
+
+    ·  previous() – moves the cursor backwards one row. Returns true if the cursor is now positioned on a row and false
+    if the cursor is positioned before the first row.
+
+    ·  first() – moves the cursor to the first row in the ResultSet object. Returns true if the cursor is now positioned
+    on the first row and false if the ResultSet object
+    does not contain any rows.
+
+    ·  last() – moves the cursor to the last row in the ResultSet object. Returns true if the cursor is now positioned on
+    the last row and false if the ResultSet object
+    does not contain any rows.
+
+    ·  beforeFirst() – positions the cursor at the start of the ResultSet object, before the first row. If the ResultSet
+    object does not contain any rows, this method has
+    no effect.
+
+    ·  afterLast() – positions the cursor at the end of the ResultSet object, after the last row. If the ResultSet object
+    does not contain any rows, this method has no effect.
+
+    ·  relative(int rows) – moves the cursor relative to its current position.
+
+    ·  absolute(int n) – positions the cursor on the n-th row of the ResultSet object.
+
