@@ -11,5 +11,5 @@ public class JDBCProgram {
     static PreparedStatement pstmt;
     static Connection con;
 
-  
+
 }//End of class
