@@ -3,7 +3,7 @@ package com.scs.java.core.objectnclass;
 /**
  * Created by pankajs on 4/22/2016.
  */
-public class ClassExample1 {
+public class ClassExample1 { // costructor 
     int a;
     float b;
     String str;
