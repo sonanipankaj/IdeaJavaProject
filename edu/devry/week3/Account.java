@@ -1,7 +1,5 @@
 package edu.devry.week3;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-import com.sun.xml.internal.bind.v2.TODO;
 
 public class Account {
     String accHolderName;
