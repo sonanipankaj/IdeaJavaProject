@@ -19,8 +19,17 @@ public Carcare(){
 	OilChangeMenu.add(BronzeItem);
 	OilChangeMenu.add(SilverItem);
 	OilChangeMenu.add(GoldItem);
-	
-	
+	BronzeItem.addActionListener(
+	//SilverItem.addActionListener(
+			new ActionListener() //anonymous inner class 
+			{ 
+			public void actionPerformed(ActionEvent event){ 
+			JOptionPane.showMessageDialog(Carcare.this, "Your total is \n of $$", "BronzeItem", JOptionPane.PLAIN_MESSAGE);
+			//JOptionPane.showMessageDialog(Carcare.this, "Your total is \n of $$", "SilverItem", JOptionPane.PLAIN_MESSAGE);
+			} 
+			}
+			);
+
 	JMenu CarWashMenu = new JMenu("Car Wash");
 	JMenuItem BasicItem =new JMenuItem("Basic");
 	JMenuItem BetterItem =new JMenuItem("Better");
@@ -28,8 +37,14 @@ public Carcare(){
 	CarWashMenu.add(BasicItem);
 	CarWashMenu.add(BetterItem);
 	CarWashMenu.add(BestItem);
-	
-	
+	BasicItem.addActionListener( 
+			new ActionListener() //anonymous inner class 
+			{ 
+			public void actionPerformed(ActionEvent event){ 
+			JOptionPane.showMessageDialog(Carcare.this, "Your total is \n of $$", "BasicItem", JOptionPane.PLAIN_MESSAGE); 
+			} 
+			}
+			);
 	JMenu TotalsClearExitMenu = new JMenu("Totals/Clear/Exit");
 	JMenuItem TotalItem =new JMenuItem("Total");
 	JMenuItem ClearItem =new JMenuItem("Clear");
@@ -47,24 +62,15 @@ public Carcare(){
 			); //end call to addActionListener 
 			//JMenuItem exitItem = new JMenuItem("Exit"); 
 			//TotalsClearExitMenu.add(exitItem); 
+		JMenuBar bar = new JMenuBar(); //create menu bar 
+		setJMenuBar(bar); 
+		bar.add(OilChangeMenu);
+		bar.add(CarWashMenu);
+		bar.add(TotalsClearExitMenu);
+		
+		
+}
 
-			JMenuBar bar = new JMenuBar(); //create menu bar 
-			setJMenuBar(bar); 
-			bar.add(OilChangeMenu); 
-			
-			JMenuBar bar1 = new JMenuBar(); //create menu bar 
-			setJMenuBar(bar1); 
-			bar1.add(CarWashMenu);
-			
-			
-			JMenuBar bar2 = new JMenuBar(); //create menu bar 
-			setJMenuBar(bar2); 
-			bar2.add(TotalsClearExitMenu);
-			
-			
-
-			
-			} 
 			public static void main(String[] args) { 
 			Carcare m = new Carcare(); 
 			m.setVisible(true); 
