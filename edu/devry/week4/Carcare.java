@@ -25,7 +25,7 @@ public Carcare(){
 			{ 
 			public void actionPerformed(ActionEvent event){ 
 			JOptionPane.showMessageDialog(Carcare.this, "Your total is \n of $$", "BronzeItem", JOptionPane.PLAIN_MESSAGE);
-			//JOptionPane.showMessageDialog(Carcare.this, "Your total is \n of $$", "SilverItem", JOptionPane.PLAIN_MESSAGE);
+			JOptionPane.showMessageDialog(Carcare.this, "Your total is \n of $$", "SilverItem", JOptionPane.PLAIN_MESSAGE);
 			} 
 			}
 			);
