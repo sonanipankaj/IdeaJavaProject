@@ -1,4 +1,4 @@
-package devry.week4;
+package edu.devry.week4;
 
 /**
  * Created by pankajs on 5/25/2016.
