@@ -1,3 +1,8 @@
+/************************************************************************
+ * Program Name:Quick Fast Car Care.java 
+ * Programmer Name : Haresh Busa
+ * Program Description : This program will do provide fast customer order accepting user interface for car wash and car oil change  .
+ ************************************************************************/
 package edu.devry.week4;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,22 +15,42 @@ import javax.swing.JOptionPane;
 
 
 public class Carcare extends JFrame {
+	int oilChangeCost = 0;
+	int carWash = 0;
 public Carcare(){
 	super("Quick Fast Car Care ");
 	JMenu OilChangeMenu = new JMenu("Oil Change");
 	JMenuItem BronzeItem =new JMenuItem("Bronze");
 	JMenuItem SilverItem =new JMenuItem("Silver");
 	JMenuItem GoldItem =new JMenuItem("Gold");
+	
 	OilChangeMenu.add(BronzeItem);
 	OilChangeMenu.add(SilverItem);
 	OilChangeMenu.add(GoldItem);
 	BronzeItem.addActionListener(
-	//SilverItem.addActionListener(
+			new ActionListener() //anonymous inner class 
+			{ 
+			public void actionPerformed(ActionEvent event){
+			oilChangeCost = 20;	
+			JOptionPane.showMessageDialog(Carcare.this, "Bronze Oild change costs $20.", "Bronze Item", JOptionPane.PLAIN_MESSAGE);
+			} 
+			}
+			);
+	SilverItem.addActionListener(
 			new ActionListener() //anonymous inner class 
 			{ 
 			public void actionPerformed(ActionEvent event){ 
-			JOptionPane.showMessageDialog(Carcare.this, "Your total is \n of $$", "BronzeItem", JOptionPane.PLAIN_MESSAGE);
-			JOptionPane.showMessageDialog(Carcare.this, "Your total is \n of $$", "SilverItem", JOptionPane.PLAIN_MESSAGE);
+				oilChangeCost = 25;
+			JOptionPane.showMessageDialog(Carcare.this, "Silver Oid change costs $25.", "Silver Item", JOptionPane.PLAIN_MESSAGE);
+			} 
+			}
+			);
+	GoldItem.addActionListener(
+			new ActionListener() //anonymous inner class 
+			{ 
+			public void actionPerformed(ActionEvent event){ 
+				oilChangeCost = 30;
+			JOptionPane.showMessageDialog(Carcare.this, "Gold oil change costs $30.", "Gold Item", JOptionPane.PLAIN_MESSAGE);
 			} 
 			}
 			);
@@ -40,8 +65,27 @@ public Carcare(){
 	BasicItem.addActionListener( 
 			new ActionListener() //anonymous inner class 
 			{ 
+			public void actionPerformed(ActionEvent event){
+				carWash  = 5;
+			JOptionPane.showMessageDialog(Carcare.this, "Basic car wash costs $5.", "Basic Item", JOptionPane.PLAIN_MESSAGE); 
+			} 
+			}
+			);
+	BetterItem.addActionListener( 
+			new ActionListener() //anonymous inner class 
+			{ 
 			public void actionPerformed(ActionEvent event){ 
-			JOptionPane.showMessageDialog(Carcare.this, "Your total is \n of $$", "BasicItem", JOptionPane.PLAIN_MESSAGE); 
+				carWash  = 10;
+			JOptionPane.showMessageDialog(Carcare.this, "Better car wash costs $10.", "Better Item", JOptionPane.PLAIN_MESSAGE); 
+			} 
+			}
+			);
+	BestItem.addActionListener( 
+			new ActionListener() //anonymous inner class 
+			{ 
+			public void actionPerformed(ActionEvent event){ 
+				carWash  = 15;
+			JOptionPane.showMessageDialog(Carcare.this, "Best car wash costs $15.", "Best Item", JOptionPane.PLAIN_MESSAGE); 
 			} 
 			}
 			);
@@ -56,12 +100,31 @@ public Carcare(){
 			new ActionListener() //anonymous inner class 
 			{ 
 			public void actionPerformed(ActionEvent event){ 
-			JOptionPane.showMessageDialog(Carcare.this, "Your total is \n of $$", "Total", JOptionPane.PLAIN_MESSAGE); 
+			JOptionPane.showMessageDialog(Carcare.this, "Oil chage cost : $" + oilChangeCost + 
+					"\nCar wash cost : $" + carWash 
+					+ "\nTotal : $" + (oilChangeCost + carWash) + ".", "Total", JOptionPane.PLAIN_MESSAGE); 
 			} 
 			} //end anonymous inner class 
 			); //end call to addActionListener 
-			//JMenuItem exitItem = new JMenuItem("Exit"); 
-			//TotalsClearExitMenu.add(exitItem); 
+	ClearItem.addActionListener( 
+			new ActionListener() //anonymous inner class 
+			{ 
+			public void actionPerformed(ActionEvent event){
+				oilChangeCost = 0;
+				carWash = 0;
+			JOptionPane.showMessageDialog(Carcare.this, "Customer accout has been cleared.", "Clear Account", JOptionPane.PLAIN_MESSAGE); 
+			} 
+			}
+			);
+	ExitItem.addActionListener( 
+			new ActionListener() //anonymous inner class 
+			{ 
+			public void actionPerformed(ActionEvent event){
+				System.exit(0);
+			} 
+			}
+			);
+	
 		JMenuBar bar = new JMenuBar(); //create menu bar 
 		setJMenuBar(bar); 
 		bar.add(OilChangeMenu);
