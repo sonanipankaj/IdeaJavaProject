@@ -1,16 +1,17 @@
 package edu.devry.week3;
 
-public class CheckingAcc extends Account {
-    String accType ="Checking";
-    double overDraft = 0.0;
+public class SavingAcc extends Account {
 
-    public CheckingAcc() {
+    String accType ="Saving";
+    double interestEarned = 0.0;
+
+    public SavingAcc() {
     }
 
-    public CheckingAcc(String accHolderName, Integer accNumber, double accBalance, String accType, double overDraft) {
+    public SavingAcc(String accHolderName, Integer accNumber, double accBalance, String accType, double interestEarned) {
         super(accHolderName, accNumber, accBalance);
         this.accType = accType;
-        this.overDraft = overDraft;
+        this.interestEarned = interestEarned;
     }
 
     public String getAccType() {
@@ -21,12 +22,12 @@ public class CheckingAcc extends Account {
         this.accType = accType;
     }
 
-    public double getOverDraft() {
-        return overDraft;
+    public double getInterestEarned() {
+        return interestEarned;
     }
 
-    public void setOverDraft(double overDraft) {
-        this.overDraft = overDraft;
+    public void setInterestEarned(double interestEarned) {
+        this.interestEarned = interestEarned;
     }
 
     public void processWithdrawal(double withdrawal){
@@ -34,9 +35,8 @@ public class CheckingAcc extends Account {
             super.processWithdrawal(withdrawal);
             System.out.println("You Account Balance: $" + super.accBalance);
         }else{
-            System.out.println("$10 Overdraft fee charged!");
-            super.accBalance -= withdrawal;
-            super.accBalance -= 10;
+            System.out.println("Insufficient funds!");
+
             System.out.println("You Account Balance: $" + super.accBalance);
         }
     }

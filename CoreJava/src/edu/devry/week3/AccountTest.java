@@ -7,7 +7,7 @@ public class AccountTest {
 
     public static void main(String[] args) {
 
-        CheckingAcc ChkAcc = new CheckingAcc();
+        CheckingAcc chkAcc = new CheckingAcc();
 
         Scanner input = new Scanner(System.in);
 
@@ -20,10 +20,10 @@ public class AccountTest {
                 String accName;
                 System.out.println("Creating a Checking Account, Enter Acc Holder Name: ");
                 accName = input.nextLine();
-                ChkAcc.setAccType("Checking");
-                ChkAcc.setAccHolderName(accName);
-                ChkAcc.setAccNumber(accNumber++);
-                ChkAcc.setAccBalance(50);
+                chkAcc.setAccType("Checking");
+                chkAcc.setAccHolderName(accName);
+                chkAcc.setAccNumber(accNumber++);
+                chkAcc.setAccBalance(50);
                // accNumber++;
                 isFirstTime = false;
             }
@@ -38,17 +38,30 @@ public class AccountTest {
         String accName;
         System.out.print("Creating a Checking Account, Enter Acc Holder Name: ");
         accName = input.nextLine();
-        ChkAcc.setAccType(ChkAcc.getAccType());
-        ChkAcc.setAccHolderName(accName);
-        ChkAcc.setAccNumber(accNumber++);
+        chkAcc.setAccType(chkAcc.getAccType());
+        chkAcc.setAccHolderName(accName);
+        chkAcc.setAccNumber(accNumber++);
         input = new Scanner(System.in);
         double firstDeposit;
         System.out.print("Please Enter Deposit Amount: ");
         firstDeposit = input.nextDouble();
-        ChkAcc.setAccBalance(firstDeposit);
+        chkAcc.setAccBalance(firstDeposit);
 
-        ChkAcc.displayAccount();
+        chkAcc.displayAccount();
 
+        input = new Scanner(System.in);
+        double firstWithdrawal;
+        System.out.print("Please Enter Withdraw Amount: ");
+        firstWithdrawal = input.nextDouble();
+
+        chkAcc.processWithdrawal(firstWithdrawal);
+
+        input = new Scanner(System.in);
+        double secondWithdrawal;
+        System.out.print("Please Enter Withdraw Amount: ");
+        secondWithdrawal = input.nextDouble();
+
+        chkAcc.processWithdrawal(secondWithdrawal);
 
 
 
