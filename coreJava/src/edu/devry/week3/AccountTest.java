@@ -64,7 +64,7 @@ public class AccountTest {
         chkAcc.processWithdrawal(secondWithdrawal);
 
 
-
+        input.close();
     }
 
 }
